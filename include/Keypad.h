@@ -6,8 +6,8 @@
 
 class Keypad {
 public:
-Status getDigitInput(int &digit);
-Status getStringInput(std::string &input);
+virtual Status getDigitInput(int &digit) = 0;
+virtual Status getStringInput(std::string &input) = 0;
 };
 
 #endif //_KEYPAD_H

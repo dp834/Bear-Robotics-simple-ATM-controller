@@ -7,7 +7,7 @@
 class Card {
 public:
 Card(uint64_t id);
-Status getAccountID(const uint64_t *id);
+virtual Status getAccountID(const uint64_t *id) = 0;
 private:
     const uint64_t accountID;
 };

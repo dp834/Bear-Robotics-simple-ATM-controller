@@ -1,9 +1,5 @@
 #include "CardReaderSimulated.h"
 
-CardReaderSimulated::CardReaderSimulated(CardReaderHandler handler):CardReader(handler) {
-
-}
-
-Status CardReaderSimulated::readCard(Card card) {
-    return ERR_NONE;
+Status CardReaderSimulated::readCard(Card &card, const uint64_t *accountID) {
+    return card.getAccountID(accountID);
 }

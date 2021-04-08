@@ -6,10 +6,8 @@
 
 class CardReader {
 public:
-CardReader(CardReaderHandler handler);
-Status readCard(Card card);
+virtual Status readCard(Card &card, const uint64_t *accountID) = 0;
 private:
-    CardReaderHandler handler;
 };
 
 #endif //_CARDREADER_H

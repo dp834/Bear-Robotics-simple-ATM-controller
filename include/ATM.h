@@ -3,6 +3,8 @@
 
 #include "Status.h"
 
+#include <memory>
+
 #include "CardReader.h"
 #include "CashBin.h"
 #include "CashIntake.h"
@@ -13,18 +15,18 @@
 
 class ATM: public CardReaderHandler {
 public:
-ATM(CardReader cardReader, CashBin cashBin, CashIntake cashIntake, BankAPI bankAPI, Screen screen, Keypad keypad);
+ATM(CardReader &cardReader, CashBin &cashBin, CashIntake &cashIntake, BankAPI &bankAPI, Screen &screen, Keypad &keypad);
 
-Status cardSwiped(Card card);
+Status cardSwiped(Card &card);
 private:
     enum ATMState { ATM_IDLE, ATM_RETURNING_CARD, ATM_PROCESSING_CARD, ATM_PROCESSING_TRANSACTION, ATM_DISPENSING_CASH, ATM_INTAKING_CASH, ATM_WAITING_USER_INPUT };
-    CardReader cardReader;
-    CashBin cashBin;
-    CashIntake cashIntake;
-    BankAPI bankAPI;
-    Screen screen;
-    Keypad keypad;
-    ATMState state;
+    CardReader *cardReader;
+    CashBin *cashBin;
+    CashIntake *cashIntake;
+    BankAPI *bankAPI;
+    Screen *screen;
+    Keypad *keypad;
+    ATMState *state;
     Account *currentUser;
 };
 

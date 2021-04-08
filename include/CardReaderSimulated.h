@@ -8,10 +8,7 @@
 
 class CardReaderSimulated: public CardReader {
 public:
-CardReaderSimulated(CardReaderHandler handler);
-Status readCard(Card card);
-private:
-    CardReaderHandler handler;
+Status readCard(Card &card, const uint64_t *accountID);
 };
 
 #endif //_CARDREADERSIMULATED_H

@@ -5,7 +5,7 @@
 
 class CashIntake {
 public:
-Status getCash(int &amount);
+virtual Status getCash(int &amount) = 0;
 };
 
 #endif //_CASHINTAKE_H

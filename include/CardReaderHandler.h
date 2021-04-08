@@ -7,7 +7,7 @@
 
 class CardReaderHandler{
 public:
-Status cardSwiped(Card card);
+virtual Status cardSwiped(Card &card) = 0;
 };
 
 #endif //_CARDREADERHANDLER_H

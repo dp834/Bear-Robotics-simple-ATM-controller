@@ -5,7 +5,7 @@
 
 class CashBin {
 public:
-Status dispenseCash(int amount);
+virtual Status dispenseCash(int amount) = 0;
 };
 
 #endif //_CASHBIN_H
