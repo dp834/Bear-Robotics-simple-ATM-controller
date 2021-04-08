@@ -7,22 +7,22 @@ Account::Account(uint64_t id, std::string firstName, std::string lastName, uint6
       timedToken(timedToken)
 {}
 
-Status Account::getID(const uint64_t *id) const {
+Status Account::getID(const uint64_t *&id) const {
     id = &(this->id);
     return ERR_NONE;
 }
 
-Status Account::getFirstName(const std::string *firstName) const {
+Status Account::getFirstName(const std::string *&firstName)  const {
     firstName = &(this->firstName);
     return ERR_NONE;
 }
 
-Status Account::getLastName(const std::string *lastName) const {
+Status Account::getLastName(const std::string *&lastName) const {
     lastName = &(this->lastName);
     return ERR_NONE;
 }
 
-Status Account::getTimedToken(const uint64_t *token) const {
+Status Account::getTimedToken(const uint64_t *&token) const {
     token = &(this->timedToken);
     return ERR_NONE;
 }

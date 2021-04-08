@@ -15,7 +15,7 @@
 
 class ATM: public CardReaderHandler {
 public:
-ATM(CardReader &cardReader, CashBin &cashBin, CashIntake &cashIntake, BankAPI &bankAPI, Screen &screen, Keypad &keypad);
+ATM(CardReader *cardReader, CashBin *cashBin, CashIntake *cashIntake, BankAPI *bankAPI, Screen *screen, Keypad *keypad);
 
 Status cardSwiped(Card &card);
 private:
@@ -28,6 +28,8 @@ private:
     Keypad *keypad;
     ATMState *state;
     Account *currentUser;
+
+    Status getPin();
 };
 
 #endif //_ATM_H

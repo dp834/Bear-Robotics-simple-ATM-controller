@@ -6,7 +6,7 @@
 
 class CardReader {
 public:
-virtual Status readCard(Card &card, const uint64_t *accountID) = 0;
+virtual Status readCard(Card &card, const uint64_t *&accountID) = 0;
 private:
 };
 

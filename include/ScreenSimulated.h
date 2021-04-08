@@ -12,7 +12,7 @@ ScreenSimulated();
 /**
  * @param text
  */
-Status setScreenText(std::string text);
+Status setScreenText(const std::string text);
 };
 
 #endif //_SCREENSIMULATED_H

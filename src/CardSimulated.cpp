@@ -1,8 +1,8 @@
 #include "CardSimulated.h"
 
-/* Inherits constructor from Card */
+CardSimulated::CardSimulated(uint64_t id): accountID(id) {}
 
-Status CardSimulated::getAccountID(const uint64_t *id){
+Status CardSimulated::getAccountID(const uint64_t *&id){
 
     /* Card is not bound to an acount */
     if( accountID == 0 ){
@@ -10,5 +10,6 @@ Status CardSimulated::getAccountID(const uint64_t *id){
     }
 
     id = &accountID;
+
     return ERR_NONE;
 }

@@ -5,7 +5,8 @@ ScreenSimulated::ScreenSimulated() {
 
 }
 
-Status ScreenSimulated::setScreenText(std::string text) {
-    std::cout << text << "\n";
+Status ScreenSimulated::setScreenText(const std::string text) {
+    std::cout << text;
+    fflush(stdout);
     return ERR_NONE;
 }

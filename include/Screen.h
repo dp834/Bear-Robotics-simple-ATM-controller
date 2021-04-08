@@ -6,7 +6,7 @@
 
 class Screen {
 public:
-virtual Status setScreenText(std::string text) = 0;
+virtual Status setScreenText(const std::string text) = 0;
 };
 
 #endif //_SCREEN_H

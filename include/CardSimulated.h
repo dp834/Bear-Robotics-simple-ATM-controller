@@ -9,7 +9,7 @@
 class CardSimulated: public Card {
 public:
 CardSimulated(uint64_t id);
-Status getAccountID(const uint64_t *id);
+Status getAccountID(const uint64_t *&id);
 private:
     const uint64_t accountID;
 };
