@@ -13,8 +13,6 @@ ScreenSimulated();
  * @param text
  */
 Status setScreenText(std::string text);
-private:
-    std::string currentBuffer;
 };
 
 #endif //_SCREENSIMULATED_H
