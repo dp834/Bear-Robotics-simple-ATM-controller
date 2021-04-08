@@ -31,3 +31,17 @@ You can simplify some complex real world problems if you think it's not worth il
 How to submit
 
 Please upload the code for this project to GitHub or anywhere, and post a link to your repository below. Please attach the instruction to clone your project, build and run tests in README.md file in the root directory of the repository.
+
+# Installing and running
+Clone the git repo and from the root of the folder run
+```
+mkdir build
+cd build
+cmake ..
+make
+```
+
+To run execute the `ATMTester` file in created in the `build` folder
+```
+./ATMTester
+```
