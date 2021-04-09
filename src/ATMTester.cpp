@@ -16,15 +16,24 @@ int main(int argc, char **argv){
     BankAPI *bankAPI = new BankAPISimulated("NoFILE");
     Screen *screen = new ScreenSimulated();
     Keypad *keypad = new KeypadSimulated();
-
-    CardSimulated card(1);
-
-    const uint64_t *accountID;
-    cardReader->readCard(card, accountID);
-
     ATM atm(cardReader, cashBin, cashIntake, bankAPI, screen, keypad);
 
-    atm.cardSwiped(card);
+    CardSimulated *card = new CardSimulated(1);
+    atm.cardSwiped(*card);
+
+    card = new CardSimulated(2);
+    atm.cardSwiped(*card);
+
+    card = new CardSimulated(3);
+    atm.cardSwiped(*card);
+
+    card = new CardSimulated(10);
+    atm.cardSwiped(*card);
+    /* Can test each component here individually too */
+
+    /* Testing the card Reader with a card */
+    const uint64_t *accountID;
+    cardReader->readCard(*card, accountID);
 
     return 0;
 }

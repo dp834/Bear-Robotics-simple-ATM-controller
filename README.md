@@ -1,5 +1,33 @@
 # Bear-Robotics-simple-ATM-controller
-Bear Robotics Coding Challenge
+
+# Installing and running
+Clone the git repo and from the root of the folder run
+```
+mkdir build
+cd build
+cmake ..
+make
+```
+
+To run execute the `ATMTester` file in created in the `build` folder
+```
+./ATMTester
+```
+
+# Features
+ Testing can be done modularly either by creating a file for the class you want to test, or run certain parts in simulation on the computer while some of the system is talking to hardware.
+ This is achieved by the abstraction of classes through the use of interfaces making swapping components as simple as passing the new type that implements the interface into the atm class.
+ The ATM class should never need to be aware of the implementation of the classes it uses.
+
+# Limitations/Issues
+
+ Pin is stored as an integer so leading zeros are unused, either swap to an array/list or store as a string.
+ Rereading the initial assignment I see that you are supposed to be able to select accounts after entering the card and pin, but the way I set it up a card it linked to an account and has an associated pin. I chose this as that is how my interactions at the atm go. To add multiple accounts in this system the `Account.h` class would need to be updated to know how many separate accounts exist within each person's account. The `BankAPI.h` would deal with the rest of the complication on giving the correct account information based on the account selected.
+ The `SimulatedBankAPI` only has hardcoded values and doesn't save changes across reruns, to fix this it can save the config to a file and read it when loading the simulator.
+ Some of the io from the user in the Simulated classes could use some polish, but it does work in it's current configuration.
+ I'm not the best with C++, but I decided to use this to practice my C++ so I'm sure my style and use of some features may be incorrect.
+
+#Bear Robotics Coding Challenge
 
 Implement a Simple ATM controller
 
@@ -31,21 +59,3 @@ You can simplify some complex real world problems if you think it's not worth il
 How to submit
 
 Please upload the code for this project to GitHub or anywhere, and post a link to your repository below. Please attach the instruction to clone your project, build and run tests in README.md file in the root directory of the repository.
-
-# Installing and running
-Clone the git repo and from the root of the folder run
-```
-mkdir build
-cd build
-cmake ..
-make
-```
-
-To run execute the `ATMTester` file in created in the `build` folder
-```
-./ATMTester
-```
-
-# Limitations/Issues
-
- Pin is stored as an integer so leading zeros are unused, either swap to an array/list or store as a string.
