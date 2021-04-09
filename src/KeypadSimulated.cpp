@@ -1,4 +1,6 @@
 #include "KeypadSimulated.h"
+
+#include <climits>
 #include <iostream>
 
 KeypadSimulated::KeypadSimulated() {
@@ -11,6 +13,9 @@ Status KeypadSimulated::getDigitInput(int &digit) {
 
     if(!isdigit(c)){
         /* Can ignore or throw error */
+        /* Wanted digit input clear anything that comes after so we are in a known state */
+        while( c != '\n' && getchar() != '\n'){
+        }
         return ERR_IO;
     }
     

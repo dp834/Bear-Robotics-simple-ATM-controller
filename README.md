@@ -45,3 +45,7 @@ To run execute the `ATMTester` file in created in the `build` folder
 ```
 ./ATMTester
 ```
+
+# Limitations/Issues
+
+ Pin is stored as an integer so leading zeros are unused, either swap to an array/list or store as a string.

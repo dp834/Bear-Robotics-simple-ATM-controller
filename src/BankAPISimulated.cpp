@@ -52,6 +52,10 @@ Status BankAPISimulated::withdraw(const Account user, int amount) {
     IF_ERROR_RETURN(
         acc->getBalance(balance) );
 
+    if( balance < amount){
+        return ERR_INVALID_TRANSACTION;
+    }
+
     return acc->setBalance(balance - amount);
 }
 
