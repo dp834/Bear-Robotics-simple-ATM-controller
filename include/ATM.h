@@ -19,7 +19,6 @@ ATM(CardReader *cardReader, CashBin *cashBin, CashIntake *cashIntake, BankAPI *b
 
 Status cardSwiped(Card &card);
 private:
-    enum ATMState { ATM_IDLE, ATM_RETURNING_CARD, ATM_PROCESSING_CARD, ATM_PROCESSING_TRANSACTION, ATM_DISPENSING_CASH, ATM_INTAKING_CASH, ATM_WAITING_USER_INPUT };
     enum ATMTransaction { ATM_WITHDRAW, ATM_DEPOSIT, ATM_CHECK_BALANCE, ATM_EXIT, ATM_INVALID_TRANSACTION };
     CardReader *cardReader;
     CashBin *cashBin;
@@ -27,7 +26,6 @@ private:
     BankAPI *bankAPI;
     Screen *screen;
     Keypad *keypad;
-    ATMState *state;
     Account *currentUser;
 
     Status getPin(uint32_t &pin);
