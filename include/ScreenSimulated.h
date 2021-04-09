@@ -9,9 +9,6 @@
 class ScreenSimulated: public Screen {
 public:
 ScreenSimulated();
-/**
- * @param text
- */
 Status setScreenText(const std::string text);
 };
 
